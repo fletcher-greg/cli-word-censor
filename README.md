@@ -1,8 +1,12 @@
 # Censor Words
 
-## This program redacts sensitive words from files with 'x', i.e., 'sensitive' --> 'xxxxxxxxx'.
+### What does it do?
 
-### It is written in node
+This program redacts sensitive words from files with 'x', i.e., 'sensitive' --> 'xxxxxxxxx'.
+
+### Programming language
+
+Node.js
 
 ## Author
 
