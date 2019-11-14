@@ -2,7 +2,7 @@
 
 ### What does it do?
 
-This program redacts sensitive words from files with 'x', i.e., 'sensitive' --> 'xxxxxxxxx'.
+This program takes files and redacts sensitive words with the char 'x', i.e., 'sensitive' --> 'xxxxxxxxx'.
 
 ### Programming language
 
