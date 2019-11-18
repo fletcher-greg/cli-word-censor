@@ -3,8 +3,10 @@ const { createReadStream, createWriteStream } = require("fs");
 
 const checkFileName = file => {
   let filetype = file.split(".")[1];
-  if (filetype !== "txt") {
-    return "not a valid filetype";
+  let allowedTypes = ["txt", "html", "js"];
+  console.log(allowedTypes.indexOf(filetype));
+  if (allowedTypes.indexOf(filetype) === -1) {
+    throw new Error("not a valid filetype");
   }
 };
 
@@ -26,7 +28,7 @@ class ReplaceText extends Transform {
   }
 
   _flush(callback) {
-    this.push("more coming");
+    // this.push("more coming");
     callback();
   }
 }
