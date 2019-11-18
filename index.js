@@ -4,7 +4,7 @@ const { createReadStream, createWriteStream } = require("fs");
 const checkFileName = file => {
   let filetype = file.split(".")[1];
   let allowedTypes = ["txt", "html", "js"];
-  console.log(allowedTypes.indexOf(filetype));
+
   if (allowedTypes.indexOf(filetype) === -1) {
     throw new Error("not a valid filetype");
   }
@@ -18,7 +18,6 @@ class ReplaceText extends Transform {
   }
 
   _transform(chunk, encoding, callback) {
-    // console.log(this.regex);
     const transformChunk = chunk
       .toString()
       .toLowerCase()
@@ -46,7 +45,6 @@ const main = () => {
   let check = checkFileName(fileName);
 
   if (check) {
-    console.log(check);
     return;
   }
 
@@ -55,7 +53,7 @@ const main = () => {
     console.log("please enter a secret word after the filename");
     return;
   }
-  console.log("hi there this is working");
+
   const xStream = new ReplaceText(textReplace(secretWord));
   const fileStream = createReadStream(`./${fileName}`);
   const writeStream = createWriteStream("./censored.txt");
